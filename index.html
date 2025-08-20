@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cricket World</title>
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
 
@@ -35,19 +34,20 @@
         <li>Indian Premier League (IPL)</li>
         <li>The Ashes</li>
       </ul>
-      <button id="explore-btn">Explore world Cricket</button>
+      <button id="explore-btn" onclick="openDialog()">Explore world Cricket</button>
     </section>
  
-    <div class="overlay">
-        <div class="dialog-box">
-      <div class="celebration">🎉</div>
-      <h2>🏏 Live Cricket Update!</h2>
-      <img src="https://i.pinimg.com/736x/95/16/0f/95160f4c08d127563ef7118f9c017b06.jpg" alt="Cricket Bat & Ball">
-      <p><span class="highlight">India: 245/3 (40 overs)</span></p>
-      <p>Virat Kohli - 105* (89 balls)</p>
-      <button class="btn btn-close" id="closeDialog">Close</button>
+    <div id="overlay" class="overlay" onclick="if(event.target.id==='overlay'){ closeDialog(); }">
+      <div class="dialog-box">
+        <h2>🏏 Live Cricket Update!</h2>
+        <img src="https://i.pinimg.com/736x/95/16/0f/95160f4c08d127563ef7118f9c017b06.jpg" alt="Cricket Bat & Ball">
+        <p><span class="highlight">India: 245/3 (40 overs)</span></p>
+        <p>Virat Kohli — 105* (89)</p>
+        
+        <button class="btn-close" onclick="closeDialog()">Close</button>
+      </div>
     </div>
-    </div>
+
     <section>
       <h2>Legendary Players</h2>
       <p>Some of the most iconic cricket players include:</p>
@@ -65,5 +65,13 @@
     <p>© 2025 Cricket World | All Rights Reserved</p>
   </footer>
 
+  <script>
+    function openDialog(){
+      document.getElementById("overlay").style.display = "flex";
+    }
+    function closeDialog(){
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
 </body>
 </html>
